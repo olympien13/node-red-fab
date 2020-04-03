@@ -5,6 +5,7 @@ FROM nodered/node-red
 RUN npm install --only=production
 
 RUN chown -R node-red:node-red /data
+RUN chmod 777 /data
 
 # Copy _your_ Node-RED project files into place
 COPY flows.json /data/flows.json
