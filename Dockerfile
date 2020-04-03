@@ -1,9 +1,12 @@
 FROM nodered/node-red
 
+USER root
+
 RUN adduser -D fab 
 RUN chown -R fab:fab /data
 RUN chmod 777 /data
 
+USER node-red
 
 # Copy package.json to the WORKDIR so npm builds all
 # of your added modules for Node-RED
