@@ -8,6 +8,7 @@ RUN chown -R node-red:node-red /data
 
 # Copy _your_ Node-RED project files into place
 COPY flows.json /data/flows.json
+COPY settings /data/settings.js
 
 # Start the container normally
 CMD ["npm", "start"]
