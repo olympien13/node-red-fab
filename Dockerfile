@@ -1,6 +1,7 @@
 FROM nodered/node-red
 
-RUN chown -R node-red:node-red /data
+RUN adduser -D fab 
+RUN chown -R fab:fab /data
 RUN chmod 777 /data
 
 
@@ -12,6 +13,8 @@ RUN npm install --only=production
 # Copy _your_ Node-RED project files into place
 COPY flows.json /data/flows.json
 COPY settings.js /data/settings.js
+
+USER fab
 
 # Start the container normally
 CMD ["npm", "start"]
