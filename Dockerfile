@@ -1,7 +1,7 @@
 FROM nodered/node-red
 
 RUN chown -R node-red:node-red /data
-RUN chmod 778 /data
+RUN chmod 777 /data
 
 
 # Copy package.json to the WORKDIR so npm builds all
